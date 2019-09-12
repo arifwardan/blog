@@ -13,13 +13,11 @@
             font-family: 'Permanent Marker', cursive;
             color: black;
         }
-        /* The navbar container */
         .topnav {
             overflow: hidden;
-            background-color: #f287;
+            background-color: blue;
         }
 
-        /* Navbar links */
         .topnav a {
             float: left;
             display: block;
@@ -29,9 +27,8 @@
             text-decoration: none;
         }
 
-        /* Links - change color on hover */
         .topnav a:hover {
-            background-color: #ddd;
+            background-color: #fff3;
             color: black;
         }
     </style>

@@ -2,7 +2,7 @@
 session_start();
 
 require_once "core/init.php";
-require_once "view/header.php";
+// require_once "view/header.php";
 
 
 if (isset($_SESSION['username']) && isset($_SESSION['user_id'])){
@@ -10,19 +10,36 @@ if (isset($_SESSION['username']) && isset($_SESSION['user_id'])){
 }
 
 ?>
+<head>
+<title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="view/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
 
 <style>
-    body{
-        background-image: url("view/gambar/bg2.jpg");
-        background-repeat: no-repeat, repeat;
-        background-attachment: fixed;
-        background-size: cover;
-    }
+body{
+    background-image: url("view/gambar/bg2.jpg");
+    background-repeat: no-repeat, repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+form {
+    border: 1px solid #f1f1f1;
+    border-radius: 10px 10px;
+    padding: 15px;
+}
+
+h1{
+    color: #f1f1f1;
+}
+
 </style>
 
-<form action="login.php" method="POST">
+<form style="width: 40%; float:right;" action="login.php" method="POST">
     <div class="container">
-        <h1>Sign In</h1>
+        <h1 stw>Sign In</h1>
         <hr>
         <input type="hidden" name="userid">
         <label for="username"><b>Username</b></label>
@@ -31,14 +48,10 @@ if (isset($_SESSION['username']) && isset($_SESSION['user_id'])){
         <input type="password" placeholder="Enter Password" name="password" autofocus>
         <input type="submit" name= "login" class="signupbtn" value="Sign In">
         <input type="reset" class="cancelbtn" value="Reset">
-        <input style="width:100%;" type="submit" name= "register" class="signupbtn" value="Sign Up">
     </div>
 </form>
 
 <?php
-if (isset($_POST['register'])) {
-    header('Location: register.php');
-}
 
 if(isset($_POST['login'])){
     

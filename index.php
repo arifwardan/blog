@@ -10,15 +10,16 @@ $show = $blog->showBlog();
 <!-- file css -->
 <style>
 body {
-    background-image: url("view/gambar/bg3.jpg");
+    background-image: url("view/gambar/bg4.jpg");
     background-repeat: no-repeat, repeat;
     background-attachment: fixed;
     background-size: cover;
     margin: 40px auto;
-    width: 43%;
+    width: 65%;
 }
-a:hover {
-    color: white;
+
+.row{
+    background-color: #fff1;
 }
 
 </style>
@@ -26,7 +27,7 @@ a:hover {
 <body class="">
     <div class="row">
         <?php while($row = $show->fetch(PDO::FETCH_OBJ)): ?>
-            <div class="column middle">
+            <div class="raw">
                 <h2><?= $row->judul; ?></h2>
                 <p><?= $row->isi; ?></p>
                 <p>Author : <?= $row->username; ?></p>
@@ -41,4 +42,4 @@ a:hover {
 
 require_once "view/footer.php";
 
-?>;
+?>

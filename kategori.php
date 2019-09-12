@@ -15,7 +15,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     margin: 40px auto;
-    width: 43%;
+    width: 65%;
 }
 
 </style>
@@ -26,7 +26,7 @@ body {
             <div class="column middle">
                 <h2><?= $value['judul']; ?></h2>
                 <p><?= $value['isi']; ?></p>
-                <p>Author : <a href=""><?= $value['username']; ?></a></p>
+                <p>Author : <?= $value['username']; ?></p>
                 <p class="waktu"><?= $value['waktu']; ?></p>
                 <p class="tag">kategori: <?= $value['nama_kategori']; ?></p><br>
             </div>

@@ -48,7 +48,7 @@ class Blog{
         if ($statement) {
             return "Success";
         }else{
-            die();
+            return "Failed";
         }
     }
 
@@ -56,7 +56,6 @@ class Blog{
         $sql       = "INSERT INTO user (username, email, password) VALUES (?, ?, ?)";
         $statement = $this->db->prepare($sql);
         $statement->execute(([$username, $email, $password]));
-
         if ($statement){
             return "Success";
         }else{

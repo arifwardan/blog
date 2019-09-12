@@ -1,9 +1,16 @@
 <?php 
 
 require_once "functions/blog.php";
-require_once "view/header.php";
+// require_once "view/header.php";
 
 ?>
+
+<head>
+<title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="view/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
 
 <style>
 body{
@@ -12,11 +19,15 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
-
+form {
+    border: 1px solid #f1f1f1;
+    border-radius: 10px 10px;
+    padding: 15px;
+}
 
 </style>
 
-<form action="" method="POST">
+<form style="width: 40%; float:right;" action="" method="POST">
     <div class="container">
         <h1 style="color: white;">Sign Up</h1>
         <hr>

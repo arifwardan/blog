@@ -59,34 +59,33 @@ h2{
 
 <div class="row">
     <?php foreach($show as $data => $value): ?>
-            <div class="column middle">
-                <h3><?=$value['judul']; ?></h3>
-                    <p><?=$value['isi']; ?></p>
-                <p class="waktu"><?= $value['waktu']; ?></p>
-                <p class="tag">Kategori: <a href="kategori.php?id=<?= $value['kategori_id']; ?>">
-                    <?php
-                        $nama  = $value['kategori_id'];
-                        $satu  = "Teknologi";
-                        $dua   = "Education";
-                        $tiga  = "Game";
-                        $empat = "Healt";
-
-                        if($nama == 1){
-                            echo $satu;
-                        }elseif ($nama == 2) {
-                            echo $dua;
-                        }elseif ($nama == 3) {
-                            echo $tiga;
-                        }elseif ($nama == 4) {
-                            echo $empat;
-                        }
-                    ?>
-                </a></p><br>
-                <a href="delete.php?id=<?= $value['id']; ?>">Delete</a>
-                <a href="edit.php?id=<?=$value['id']; ?>">Edit</a>
-            </div>
-            <hr>
-    <?php endforeach; ?>
+        <div class="column middle">
+            <h3><?=$value['judul']; ?></h3>
+            <p><?=$value['isi']; ?></p>
+            <p class="waktu"><?= $value['waktu']; ?></p>
+            <p class="tag">Kategori: <a href="kategori.php?id=<?= $value['kategori_id']; ?>">
+    <?php
+        $nama  = $value['kategori_id'];
+        $satu  = "Teknologi";
+        $dua   = "Education";
+        $tiga  = "Game";
+        $empat = "Healt";
+    if($nama == 1){
+        echo $satu;
+    }elseif ($nama == 2) {
+        echo $dua;
+    }elseif ($nama == 3) {
+        echo $tiga;
+    }elseif ($nama == 4) {
+        echo $empat;
+    }
+    ?>
+        </a></p><br>
+        <a href="delete.php?id=<?= $value['id']; ?>">Delete</a>
+        <a href="edit.php?id=<?=$value['id']; ?>">Edit</a>
+</div>
+<hr>
+<?php endforeach; ?>
 </div>
 
 </div>
@@ -98,10 +97,10 @@ if(isset($_POST['addBlog'])){
     $user = $_SESSION['user_id'];
     $kategori = $_POST['kategori'];
     $add = $blog->addBlog($judul, $isi, $user, $kategori);
-    if ($add == "Success") {
-        header('Location: add.php');
-        echo "<script>alert('berhasil menambahkan')</script>";
+    if ($add == "Failed") {
+        header('Location: failed.php');
     }
+    header('Location:add.php');
 } 
 
 require_once "view/footer.php";
